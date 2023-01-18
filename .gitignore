@@ -24,6 +24,7 @@ ranger/folders.conf
 !/README_cn.md
 !/vimium-options.json
 !/zsh
+!/lf
 !/i3status/
 !/mutt/
 /mutt/accounts/*
