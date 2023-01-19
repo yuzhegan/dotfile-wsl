@@ -395,6 +395,8 @@ map W %lf -remote "send $id set ratios 1:2:3"
 map yy copy
 map yd $dirname -- "$f" | head -c-1 | xclip -i -selection clipboard
 map yp $printf "%s" "$fx" | xclip -selection clipboard
+map yP $printf "%s" "$fx" | xclip -selection clipboard;winpath=$(wslpath -w "$fx"); echo $winpath | xclip -selection clipboard
+# map yP :$printf "%s" "$fx" | xclip -selection clipboard<CR>:autocmd BufEnter * :execute 'map yP :$printf "%s" "$fx" | xclip -selection clipboard | wslpath -w -'<CR>
 map yn $basename -a -- $fx | head -c-1 | xclip -i -selection clipboard
 map ye yank-basename-without-extension 
 # jump to file
