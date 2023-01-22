@@ -87,7 +87,7 @@ cmd delete ${{
 
 # sxiv display image
 cmd img ${{
-    sxiv *.png *.btw *.jpg *.svg *.jpeg *.PNG *.BTW *.JPG *.SVG *.JPEG 2>/dev/null
+    sxiv *.png *.btw *.jpg *.svg *.gif *.jpeg *.PNG *.BTW *.JPG *.SVG *.JPEG *.GIF 2>/dev/null
 }}
 
 # eval '/mnt/d/Users/yuzhe/AppData/Local/Kingsoft/WPS\ Office/11.1.0.11045/office6/wps.exe' `python ~/ri_script/wsl_2_abspath.py "$1"`
@@ -131,7 +131,7 @@ powershell.exe 'Get-Item ' `python ~/ri_script/wsl_2_abspath.py "$f"` '| Set-Cli
 
 cmd pastefils ${{
 path=$(wslpath -u $(pwsh.exe -Command "Add-Type -AssemblyName System.Windows.Forms; [System.Windows.Forms.Clipboard]::GetFileDropList() | Select-Object -First 1"))
-echo $path
+# echo $path
 path=$(echo $path | sed 's/\r$//')
 
 name=$(basename "$path")
@@ -140,6 +140,21 @@ echo $name
 cp "$path" "$(pwd)/$name"
 
 }}
+
+cmd cuttempfile  ${{
+path=$(wslpath -u $(pwsh.exe -Command "(Get-Clipboard).Replace('/', '\')"))
+# echo $path
+path=$(echo $path | sed 's/\r$//')
+
+name=$(basename "$path")
+echo $name
+# cp "$path" "$(pwd)/$name"
+mv "$path" "$(pwd)/$name"
+
+}}
+
+
+
 
 
 # cp $(wslpath -u $(wslpath -u $(pwsh.exe -Command "Add-Type -AssemblyName System.Windows.Forms; [System.Windows.Forms.Clipboard]::GetFileDropList() | Select-Object -First 1"))) "${PWD}/${name}"
@@ -421,7 +436,7 @@ map <c-t> tc
 map <c-n> ps
 map <c-c> copyfils
 map <c-v> pastefils
-
+map <c-x> cuttempfile
 
 # Source Bookmarks
 source "~/.config/lf/shortcutrc"
