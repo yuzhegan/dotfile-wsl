@@ -19,6 +19,7 @@ ranger/folders.conf
 !/.Xmodmap-cn
 !/.zshrc
 !/.gitignore
+!/sxiv/
 #!/llpp.conf
 !/README.md
 !/README_cn.md

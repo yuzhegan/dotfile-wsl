@@ -1,6 +1,8 @@
 map gh cd ~
+map gza cd /mnt/h/阿里云盘
 map gt cd ~/temp
-map gi cd ~/Github
+map gii cd ~/Github
+map gih cd ~/Github/hexo/source/_posts
 map gD cd ~/Desktop
 map gdd cd ~/Downloads
 map gdj cd ~/wd/软件
@@ -8,6 +10,7 @@ map gdg cd ~/wd/工作目录
 map gdt cd ~/wd/工作目录/工具
 map gds cd ~/wd/工作目录/工具/GenShipment
 map gdc cd ~/wd/工作目录-图片/clothing-pic
+map gdh cd ~/wd/工作目录/搏飞扬/订货表
 map gdm cd ~/wd/工作目录/条码/搏飞扬(美国)-亚马逊仓储
 map gff cd ~/.config
 map gfr cd ~/.config/ranger
@@ -33,4 +36,5 @@ map gG cd ~/go/src
 map gp cd ~/prog
 map gw cd ~/Pictures/wallpapers
 map gfp cd ~/.local/lib/python3.10/site-packages
+
 #source ~/.sconfig/ranger/rc.conf
