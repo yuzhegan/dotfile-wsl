@@ -130,29 +130,45 @@ powershell.exe 'Get-Item ' `python ~/ri_script/wsl_2_abspath.py "$f"` '| Set-Cli
 
 
 cmd pastefils ${{
-path=$(wslpath -u $(pwsh.exe -Command "Add-Type -AssemblyName System.Windows.Forms; [System.Windows.Forms.Clipboard]::GetFileDropList() | Select-Object -First 1"))
+# path=$(wslpath -u $(pwsh.exe -Command "Add-Type -AssemblyName System.Windows.Forms; [System.Windows.Forms.Clipboard]::GetFileDropList() | Select-Object -First 1"))
+path=$(wslpath -u $(pwsh.exe -Command "[System.Console]::OutputEncoding=[System.Text.Encoding]::UTF8; Add-Type -AssemblyName System.Windows.Forms; [System.Windows.Forms.Clipboard]::GetFileDropList() | Select-Object -First 1"))
 # echo $path
 path=$(echo $path | sed 's/\r$//')
 
 name=$(basename "$path")
-echo $name
+# echo $name
+# echo $path
 # cp "$path" "$(pwd)/$name"
 cp "$path" "$(pwd)/$name"
 
 }}
 
-cmd cuttempfile  ${{
-path=$(wslpath -u $(pwsh.exe -Command "(Get-Clipboard).Replace('/', '\')"))
+# cmd cuttempfile  ${{
+# path=$(wslpath -u $(pwsh.exe -Command "(Get-Clipboard).Replace('/', '\')"))
+# # echo $path
+# path=$(echo $path | sed 's/\r$//')
+#
+# name=$(basename "$path")
+# echo $name
+# # cp "$path" "$(pwd)/$name"
+# mv "$path" "$(pwd)/$name"
+#
+# }}
+
+
+cmd cuttempfile ${{
+# path=$(wslpath -u $(pwsh.exe -Command "Add-Type -AssemblyName System.Windows.Forms; [System.Windows.Forms.Clipboard]::GetFileDropList() | Select-Object -First 1"))
+path=$(wslpath -u $(pwsh.exe -Command "[System.Console]::OutputEncoding=[System.Text.Encoding]::UTF8; Add-Type -AssemblyName System.Windows.Forms; [System.Windows.Forms.Clipboard]::GetFileDropList() | Select-Object -First 1"))
 # echo $path
 path=$(echo $path | sed 's/\r$//')
 
 name=$(basename "$path")
-echo $name
+# echo $name
+# echo $path
 # cp "$path" "$(pwd)/$name"
 mv "$path" "$(pwd)/$name"
 
 }}
-
 
 
 

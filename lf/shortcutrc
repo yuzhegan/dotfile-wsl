@@ -36,5 +36,7 @@ map gG cd ~/go/src
 map gp cd ~/prog
 map gw cd ~/Pictures/wallpapers
 map gfp cd ~/.local/lib/python3.10/site-packages
+map gcc cd ~/wc/Users/yuzhe/.chatgpt/notes
+map gih cd ~/Github/hexo/source/_posts/
 
 #source ~/.sconfig/ranger/rc.conf
