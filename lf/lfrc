@@ -19,15 +19,22 @@
 set shellopts '-eu'
 set ifs "\n"
 set scrolloff 10
+set mouse true
 set icons
 set period 1
 set hiddenfiles ".*:*.aux:*.log:*.bbl:*.bcf:*.blg:*.run.xml"
-# set cleaner '~/.config/lf/cleaner'
-# set previewer '~/.config/lf/scope'
-set previewer stpv
-set cleaner stpvimgclr
-&stpvimg --listen $id
-cmd on-quit $stpvimg --end $id
+# set previewer ~/.config/lf/preview
+# set cleaner ~/.config/lf/cleaner
+set previewer ~/.config/lf/preview
+set cleaner ~/.config/lf/cleaner
+set drawbox
+
+# set previewer ctpv
+# set cleaner ctpvclear
+# &ctpv -s $id
+# &ctpvquit $id
+
+
 
 cmd openpdf cmd.exe /c start edge $(wslpath -w %f)
 
@@ -275,11 +282,11 @@ fi
 }}
 
 # dragon cmd
-cmd dragon %dragon-drag-and-drop -a -x $fx
-cmd dragon-stay %dragon-drag-and-drop -a $fx
-cmd dragon-individual %dragon-drag-and-drop $fx
+cmd dragon %dragon-drop -a -x $fx
+cmd dragon-stay %dragon-drop -a $fx
+cmd dragon-individual %dragon-drop $fx
 cmd cpdragon ${{
-files=$(dragon-drag-and-drop -t -x)
+files=$(dragon-drop -t -x)
 
 for file in $files
 do
@@ -290,7 +297,7 @@ done
 }}
 
 cmd mvdragon ${{
-files=$(dragon-drag-and-drop -t -x)
+files=$(dragon-drop -t -x)
 
 for file in $files
 do
@@ -301,7 +308,7 @@ done
 }}
 # download file 
 cmd dlfile ${{
-url=$(dragon-drag-and-drop -t -x)
+url=$(dragon-drop -t -x)
 
 if [ -n "$url" ]; then
   printf "File Name: "
@@ -456,3 +463,4 @@ map <c-x> cuttempfile
 
 # Source Bookmarks
 source "~/.config/lf/shortcutrc"
+

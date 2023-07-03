@@ -1,5 +1,6 @@
 # This file contains fish universal variable definitions.
 # VERSION: 3.0
+SETUVAR --export DISPLAY:172\x2e28\x2e48\x2e1\x3a0\x2e0
 SETUVAR __fish_init_2_3_0:\x1d
 SETUVAR __fish_initialized:3400
 SETUVAR fish_color_autosuggestion:747369
@@ -31,4 +32,4 @@ SETUVAR fish_pager_color_description:B3A06D\x1eyellow
 SETUVAR fish_pager_color_prefix:normal\x1e\x2d\x2dbold\x1e\x2d\x2dunderline
 SETUVAR fish_pager_color_progress:brwhite\x1e\x2d\x2dbackground\x3dcyan
 SETUVAR fish_pager_color_selected_background:\x2dr
-SETUVAR fish_user_paths:/home/david/\x2efzf/bin
+SETUVAR fish_user_paths:/home/dav/\x2elocal/bin\x1e/home/dav/\x2elocal/share/pypoetry/venv/bin\x1e/home/david/\x2efzf/bin

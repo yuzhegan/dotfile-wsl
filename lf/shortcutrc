@@ -1,5 +1,4 @@
-map gh cd ~
-map gza cd /mnt/h/阿里云盘
+map gh cd /mnt/h/阿里云盘
 map gt cd ~/temp
 map gii cd ~/Github
 map gih cd ~/Github/hexo/source/_posts
@@ -37,6 +36,7 @@ map gp cd ~/prog
 map gw cd ~/Pictures/wallpapers
 map gfp cd ~/.local/lib/python3.10/site-packages
 map gcc cd ~/wc/Users/yuzhe/.chatgpt/notes
+map gcg cd ~/wc/A-广告工具/ad/BFY-博飞扬/GenAdList/Keywords
 map gih cd ~/Github/hexo/source/_posts/
 
 #source ~/.sconfig/ranger/rc.conf
