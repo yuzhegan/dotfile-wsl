@@ -45,7 +45,9 @@ ranger/plugins/devicons_linemode.pyo
 !/pudb/pudb.cfg
 !/bin
 !/lmk
-
+!/.profile
+!/.xprofile
+!/.zshrc
 jesseduffield/lazynpm/state.yml
 
 ranger/__pycache__/commands.cpython-39.opt-1.pyc
